@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Let and Temporal Dead Zone</title>
+</head>
+
+<body>
+    <h1>Let and Temporal Dead Zone</h1>
+    <p>Let esetében nem férünk hozzá a változóhoz, tehát nem kap alapértelmezett undefined értéket.</p>
+    <p>Minden var-al létrehozott változó a window objektumhoz van kötve, míg a let nem.</p>
+    <script>
+        'use strict'
+        let sampleVariable = 'sample';
+        console.log(sampleVariable);
+
+        var sampleVariable2 = 'sample2';
+        console.log(window.sampleVariable2);
+        
+        console.log(window.sampleVariable);
+    </script>
+</body>
+
+</html>
