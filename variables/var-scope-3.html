@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memory Leak</title>
+</head>
+<body>
+    <h1>Memory leak</h1>
+    <p>var kulcsszó nélkül létrehozott változó akár függvényen belül létrehozva is elérhető globálisan. A garbage collector nem törli a változót!</p>
+    <p>Strict módban elkerülhető ez a hiba.</p>
+    <script>
+        'use strict'
+
+        function sampleFunction() {
+            localVariable = 'local';
+            console.log(localVariable);
+        }
+
+        sampleFunction();
+        console.log(localVariable);
+    </script>
+</body>
+</html>
