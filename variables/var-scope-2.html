@@ -8,6 +8,14 @@
 </head>
 <body>
     <script>
+        var globalScope = 'global';
+
+        function sampleFunction() {
+            var globalScope = 'local';
+            console.log(globalScope);
+        }
+        sampleFunction();
+        console.log(globalScope);
     </script>
 </body>
 </html>
