@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Clojure</h1>
+    <p>Ha lefut egy függvény, akkor a garbage collector kipucolja a memóriából a paramétereket, hiszen nincsen már rájuk szükség. <br>
+    Lehetőség van azonban egy függvényen belül deklarált változó megőrzésére a függvény lefutása után is. Ez a clojure.
+    </p>
+    <script>
+        'use strict'
+
+        //Clojure
+
+        function makeCounter() {
+            let counter = 0;
+            return function increaseCounter() {
+                counter += 1;
+                console.log(counter);
+            }
+        }
+
+        const increaseCounter = makeCounter();
+        increaseCounter();
+        increaseCounter();
+        increaseCounter();
+        increaseCounter();
+        increaseCounter();
+        increaseCounter();
+        increaseCounter();
+        console.log('-----------curly-----------');
+        makeCounter()();
+        increaseCounter();
+    </script>
+</body>
+</html>
