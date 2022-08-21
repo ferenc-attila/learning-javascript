@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Polyfill</h2>
+    <p>A polyfill egy olyan kód, kódrészlet, amely biztosítja azt a működést, amelyet natív módon elvárnánk a böngészőtől.</p>
+    <h2>Transpiler</h2>
+    <p>A transpiler-ek olyan eszközök, amelyek egy adott nyelvben írt kódot átalakítanak egy másik nyelv ekvivalens kódjává.
+        A JavaScript esetében ez nem feltétlenül egy másik nyelvet, hanem a szabvány egy másik verzióját jelenti.
+        Akkor használjuk, ha nem csak új tulajdonságokat, metódusokat akarunk használni, hanem újfajta szintaxist is.
+        Babeljs.io
+    </p>
+    <script>
+        // A polyfill egy olyan kód, kódrészlet, amely biztosítja azt a működést, amelyet natív módon elvárnánk a böngészőtől.
+
+        console.log(String.prototype.includes);
+
+        if (!String.prototype.includes) {
+            String.prototype.includes = function(search, start) {
+                'use strict';
+                if (typeof start !== 'number' || isNaN(start)) {
+                    start = 0;
+                }
+                if (typeof search !== 'string' || start + search.length > this.length) {
+                    return false;
+                } else {
+                    return this.indexOf(search, start) !== -1;
+                }
+            };
+        }
+
+        console.log('result: ', 'Borabora'.includes('bora'));
+
+        //A  transpiler-ek olyan eszközök, amelyek egy adott nyelvben írt kódot átalakítanak egy másik nyelv ekvivalens kódjává.
+        //A JavaScript esetében ez nem feltétlenül egy másik nyelvet, hanem a szabvány egy másik verzióját jelenti.
+        //Akkor használjuk, ha nem csak új tulajdonságokat, metódusokat akarunk használni, hanem újfajta szintaxist is.
+        //Babeljs.io
+    </script>
+</body>
+</html>
