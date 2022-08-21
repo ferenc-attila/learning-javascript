@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Block scoped function</h1>
+    <script>
+        'use strict';
+
+        {
+            function calculate(a, b) {
+                return a + b;
+            }
+            console.log(calculate(1, 2));
+            {
+                function calculate(a, b) {
+                    return a * b;
+                }
+                console.log(calculate(2, 3));
+            }
+            console.log(calculate(2, 3));
+        }
+
+        // console.log(calculate(10, 10));
+    </script>
+</body>
+</html>
