@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Callback function</h1>
+    <p>
+        Nem meghívjuk a függvényt (compare()), hanem paraméterként adjuk át (compare).
+        Az első esetben ugyanis a visszatérési értéke kerülne átadásra, így pedig olyan, mintha bemásolzuk volna a függvény törzsét.
+        Azaz: <br>
+        <code>numericArray.sort(function compare(a,b){<br>
+            return a-b; <br>
+         });</code>
+         <br>
+         Ez így nehezebben olvasható, mintha kiszerveztük volna.
+         <br>
+        A fenti esetben a sort() függvényt nevezzük higher order function-nek, azaz olyan függvénynek, amelynek egy másik függvényt adunk át paraméterként.
+    </p>
+    <script>
+        'use strict'
+
+        //Callback: függvény paraméterként van átadva egy másik függvénynek
+
+        const numericArray = [5, 1245, 238, 569, 4, 6, 1258965741, 7];
+
+        function compare(a, b) {
+            return a -b;
+        }
+
+        numericArray.sort(compare);
+
+        //Nem meghívjuk a függvényt (compare()), hanem paraméterként adjuk át (compare).
+        //Az első esetben ugyanis a visszatérési értéke kerülne átadásra, így pedig olyan, mintha bemásolzuk volna a függvény törzsét.
+
+        console.log(numericArray);
+
+    </script>
+</body>
+</html>
