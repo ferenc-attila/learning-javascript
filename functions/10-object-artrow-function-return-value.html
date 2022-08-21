@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Arrow function 2</h1>
+    <h2>Object as return value of an arrow function</h2>
+
+    <script>
+        'use strict';
+
+        //Implicit return
+        const arrowFunction1 = firstName => { };
+        console.log(arrowFunction1('John'));
+
+        //Implicit return
+        const arrowFunction2 = firstName => 'Hello ' + firstName + '!';
+        console.log(arrowFunction2('John'));
+
+        //Nem kötelező, de kitehető a kapcsos zárójel. Ekkor kell a return kulcsszó is.
+        const arrowFunction3 = firstName => { return 'Hello ' + firstName + '!' };
+        console.log(arrowFunction3('John'));
+
+        //Itt valójában label van, nem object
+        const arrowFunction4 = firstName => { name: firstName };
+        console.log(arrowFunction4('John'));
+
+        const arrowFunction5 = firstName => ({ name: firstName });
+        console.log(arrowFunction5('John'));
+
+        const arrowFunction6 = firstName => {return { name: firstName }};
+        console.log(arrowFunction6('John'));
+
+        </script>
+</body>
+
+</html>
