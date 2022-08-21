@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Memory life cycle</h1>
+    <h2> Memory life cyle</h2>
+    <ul>
+        <li>
+            1: Memóriaterület lefoglalása (Allocate)
+        </li>
+        <li>
+            2: Memóriaterület irása/olvasása (Use)
+        </li>
+        <li>
+            3: Memóriaterület felszabadítása (Release - Garbage collection)
+        </li>
+    </ul>
+    <h2>Változó létrehozása, értékadás</h2>
+    <ul>
+        <li>
+            1: Egyedi azonosító létrehozása
+        </li>
+        <li>
+            2: Memóriaterület lefoglalása
+        </li>
+        <li>
+            Érték tárolása a memóriában
+        </li>
+    </ul>
+    <h2>Adattípusok</h2>
+    <h3>Primitívek</h3>
+    <ul>
+        <li>number</li>
+        <li>string</li>
+        <li>boolean</li>
+        <li>undefined</li>
+        <li>null</li>
+        <li>symbol</li>
+        <li>bigint</li>
+    </ul>
+    <p>
+        <code>let sampleNumber = 42;</code>
+    </p>
+    <img src="../img/number-stack.jpg" alt="number in stack">
+    <p>
+        <code>let sampleNumber = 84;</code>
+    </p>
+    <img src="../img/modify-number-stack.jpg" alt="number in stack">
+    <p>A primitív típusú változó tehát immutable!</p>
+    <p>
+        <code>let newSampleNumber = sampleNumber;</code>
+    </p>
+    <img src="../img/new-variable-number-stack.jpg" alt="number in stack">
+    <p>
+        <code>const sampleNumber = 42;<br>
+        sampleNumber += 1;</code>
+    </p>
+    <img src="../img/const-number-stack.jpg" alt="number in stack">
+
+    <h3>Objektumok</h3>
+    <p>Minden más, ami nem primitív</p>
+    <ul>
+        <li>Array</li>
+        <li>Map</li>
+        <li>Set</li>
+        <li>Date</li>
+        <li>Math</li>
+        <li>Function</li>
+        <li>...</li>
+    </ul>
+
+    <p>
+        <code>const sampleArray = [1,2,3,4,5];</code>
+    </p>
+    <img src="../img/object-stack-heap.jpg" alt="">
+    <p>
+        <code>const sampleArray = [1,2,3,4,5];<br>
+        const sampleArrayCopy = sampleArray;</code>
+    </p>
+    <img src="../img/object-copy-stack-heap.jpg" alt="">
+    <p>Ha bármelyik változó módusul, a másik is módosul</p>
+    <p>
+        <code>let sampleArray = [1,2,3,4,5];<br>
+            let sampleArrayCopy = sampleArray;<br>
+            sampleArrayCopy.push(6);<br>
+            console.log(sampleArray);<br>
+            console.log(sampleArrayCopy);<br>
+            sampleArrayCopy = 10;<br>
+            console.log(sampleArrayCopy);<br>
+        </code>
+    </p>
+    <p>
+        Függvények esetében érték szerinti paraméterátadás történik. Objektumok esetében azonban az érték egy referencia! (Ahogyan Java esetén is)
+    </p>
+    <h3>Data type</h3>
+    <ul>
+        <li>number: 8 byte (IEEE 754)</li>
+        <li>string: 2 byte/character (UTF-16)</li>
+        <li>boolean: 4 byte</li>
+    </ul>
+</body>
+
+</html>
