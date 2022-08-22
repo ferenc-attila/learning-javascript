@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Basics of functional programming</h1>
+
+    <ul id="price-list">
+        <li>
+            AOC C241G Monitor
+        </li>
+        <li data-company="AMD">
+            SAPPHIRE Radeon RX 5700 XT 8GB GDDR6 256bit Videókártya
+        </li>
+        <li data-price="151.012,12">
+            GIGABYTE GeForce RTX 2060 SUPER AORUS 8GB GDDR6 256bit Videókártya
+        </li>
+        <li data-price="123.243,55">
+            LG 34UC79G-B Monitor
+        </li>
+        <li data-price="64.543,29">
+            GIGABYTE GeForce GTX 1060 WINDFORCE OC 3GB GDDR5 192bit Videókártya
+        </li>
+        <li data-price="230.323,32">
+            Acer Predator XB271HU Monitor
+        </li>
+        <li data-price="48.344,30">
+            LG 25UM58-P Monitor
+        </li>
+    </ul>
+
+    <script>
+        'use strict';
+
+        const sum = Array
+        .from(document.querySelectorAll('#price-list li[data-price]'))
+        .filter(item => item.textContent.toLowerCase().includes('Monitor'.toLowerCase()))
+        .map(item => parseFloat(item.dataset.price.replace('.', '').replace(',', '.')))
+        .reduce((previousPrice, currentPrice) => previousPrice + currentPrice);
+        console.log(sum);
+    </script>
+</body>
+</html>
