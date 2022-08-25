@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Template literals with arrays</h1>
+
+    <script>
+        'use strict';
+
+        const people = [
+            {
+                firstName: 'John',
+                lastName: 'Doe'
+            },
+            {
+                firstName: 'Jane',
+                lastName: 'Doe'
+            }
+        ];
+
+        const template = `
+            <div>
+                ${people.map(person => `<p>${person.firstName} ${person.lastName}</p>`).join('')}
+            </div>`;
+
+        document.body.innerHTML = `<h1>${document.querySelector('h1').innerHTML}</h1>` + template; //Not so beauty, need to refactor! 
+
+        // <div>
+        //     <p>John Doe</p>
+        //     <p>Jane Doe</p>
+        // </div>
+    </script>
+</body>
+</html>
