@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Currency</h1>
+
+    <script>
+        'use strict';
+
+        const usCurrency = new Intl.NumberFormat('en-US',{
+            style: 'currency',
+            currency: 'USD'
+        });
+        const gbCurrency = new Intl.NumberFormat('en-GB',{
+            style: 'currency',
+            currency: 'GBP'
+        });
+        const deCurrency = new Intl.NumberFormat('de-DE',{
+            style: 'currency',
+            currency: 'EUR'
+        });
+        const huCurrency = new Intl.NumberFormat('hu-HU',{
+            style: 'currency',
+            currency: 'HUF'
+        });
+
+        console.log(usCurrency.format(100200400.45));
+        console.log(gbCurrency.format(100200400.45));
+        console.log(deCurrency.format(100200400.45));
+        console.log(huCurrency.format(100200400.45));
+    </script>
+</body>
+</html>
