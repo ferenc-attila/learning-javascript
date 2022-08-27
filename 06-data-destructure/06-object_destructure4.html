@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Object destructure 4.</h1>
+    <script>
+        'use strict'
+
+        const styles = {
+            background: 'white',
+            color: 'red',
+            display: 'block',
+            visibility: 'hidden'
+        }
+
+        const {
+            background: b,
+            color: c = 'blue',
+            display: d,
+            border: bo = '1px solid black'
+        } = styles;
+        console.log(b, c, d, bo);
+    </script>
+</body>
+</html>
