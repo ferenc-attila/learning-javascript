@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>New date and now</h1>
+
+    <script>
+        'use strict';
+
+        const dateNow = new Date();
+        console.log(dateNow);
+        const date1 = new Date('October 8, 2019 11:50:10');
+        console.log(date1);
+        const date2 = new Date('2019-10-08T11:50:10');
+        console.log(date2);
+        const date3 = new Date(2019, 9, 8, 11, 50, 10, 555);
+        console.log(date3);
+        console.log(dateNow.toJSON());
+        const dateString = Date();
+        console.log(typeof dateString);
+        
+    </script>
+</body>
+</html>
