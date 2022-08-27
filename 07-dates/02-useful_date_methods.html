@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Useful date methods</h1>
+    <script>
+        'use strict'
+
+        const dateNow = new Date();
+        console.log(dateNow.toDateString());
+        console.log(dateNow.toLocaleDateString('hu'));
+        console.log(dateNow.toLocaleDateString('en'));
+        console.log(dateNow.toTimeString());
+        console.log(dateNow.toLocaleTimeString('hu'));
+        console.log(dateNow.toLocaleTimeString('en'));
+        console.log(dateNow.toJSON());
+        console.log(Date.now());
+        console.log(Date.now()/1000/60/60/24/365.4);
+    </script>
+</body>
+</html>
