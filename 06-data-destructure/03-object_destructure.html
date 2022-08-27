@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Object destructure</h1>
+<p>Csak a propertyName működik, tehát pl. a <br><code>const { a, b } = person</code><br> nem.</p>
+    <script>
+        'use strict'
+
+        const person = {
+            firstName: "John",
+            lastName: "Doe",
+            age: 30
+        };
+
+        const{ firstName, lastName } = person; //csak a propertyName működik, tehgát pl. a const { a, b } = person nem.
+
+        console.log(firstName, lastName);
+    </script>
+</body>
+</html>
