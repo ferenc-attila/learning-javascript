@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Swap data</h1>
+
+    <script>
+        'use strict';
+
+        let a = "A értéke";
+        let b = "B értéke";
+
+        [a,b] = [b,a];
+
+        console.log(a,b);
+
+        function advancedBubbleSort(array) {
+            let swapped;
+
+            do {
+                swapped = false;
+                for (let i = 0; i < array.length - 1; i++) {
+                    if (array[i] > array[i+1]) {
+                        [array[i], array[i+1]] = [array[i+1], array[i]];
+                        swapped=true
+                    }
+                }
+            } while (swapped);
+            return array;
+        }
+
+        console.log(advancedBubbleSort([234,584,987,123,23,785]));
+    </script>
+</body>
+</html>
