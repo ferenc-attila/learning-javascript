@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>For...of loop</h1>
+    <script>
+        'use strict'
+
+        const numbers = [345,76,24,7682,354];
+        
+        for (let key in numbers) {
+            if (numbers.hasOwnProperty(key)) {
+                console.log(numbers[key]);
+            }
+        }
+
+        for (let value of numbers) {
+            console.log(value);
+        }
+
+        for (let key of Object.keys(numbers)) {
+            console.log(key);
+        }
+    </script>
+</body>
+</html>
