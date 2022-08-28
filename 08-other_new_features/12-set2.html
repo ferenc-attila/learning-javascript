@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Set object and delete(), clear(), next() methods</h1>
+
+    <script>
+        'use strict';
+
+        const languages = new Set();
+        languages
+            .add('php')
+            .add('java')
+            .add('python')
+            .add('perl')
+            .add('golang');
+        
+        languages.delete('php');
+        console.log(languages.size);
+        languages.clear();
+        console.log(languages.size);
+
+        languages
+            .add('php')
+            .add('java')
+            .add('python')
+            .add('perl')
+            .add('golang');
+
+        const values = languages.values();
+
+        console.log(values.next().value);
+        console.log(values.next());
+        console.log(values.next());
+        console.log(values.next());
+        console.log(values.next());
+        console.log(values.next());
+    </script>
+</body>
+</html>
