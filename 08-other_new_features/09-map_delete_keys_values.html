@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Map delete(), keys(), values() methods</h1>
+
+    <script>
+        'use strict'
+
+        const sampleMap = new Map();
+
+        sampleMap
+            .set('foo', 123)
+            .set('moo', 456)
+            .set('boo', 789);
+        
+        sampleMap.forEach((value, key) => console.log('key: ', key, ' value: ', value));
+        
+        sampleMap.delete('foo');
+
+        console.log(sampleMap.size);
+        console.log(sampleMap.keys());
+        console.log(sampleMap.values());
+        sampleMap.forEach((value, key) => console.log('key: ', key, ' value: ', value));
+        
+        sampleMap.clear();
+        console.log(sampleMap.size);
+    </script>
+</body>
+</html>
