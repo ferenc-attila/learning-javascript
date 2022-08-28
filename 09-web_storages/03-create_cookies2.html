@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Create Cookies</h1>
+    <h2>getCookie()</h2>
+    <script>
+        'use strict';
+
+        const cookieHandler = {
+            setCookie(name, value, expirationDays = 30, path = '/', SameSite = 'Strict') {
+                const now = new Date();
+                now.setTime(now.getTime() + (expirationDays * 24 * 60 * 60 * 1000));
+                const expires = now.toUTCString();
+                document.cookie = `${name}=${value};expires=${expires};path=${path};SameSite=${SameSite}`;
+            },
+            getCookie(name) {
+                const keyValuePairs = document.cookie
+                .split('; ')
+                .find(cookie => cookie.startsWith(`${name}=`));
+                return keyValuePairs ? keyValuePairs.split('=')[1] : '';
+            },
+            checkCookie(name) {},
+            deleteCookie(name) {}
+        }
+
+        cookieHandler.setCookie('username', 'John Doe');
+        cookieHandler.setCookie('job', 'student');
+        console.log(document.cookie);
+        console.log(cookieHandler.getCookie('job'));
+        console.log(cookieHandler.getCookie('jobb'));
+    </script>
+</body>
+
+</html>
