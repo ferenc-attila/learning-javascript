@@ -1,5 +1,13 @@
 'use strict';
 
-export const sumValues = (x,y) => x + y;
+const pi = 3.14;
 
-export const subtractValues = (x,y) => x - y;
+const sumValues = (x,y) => x + y;
+const subtractValues = (x,y) => x - y;
+const calculateCircleArea = (r) => r ** 2 * pi;
+
+export {
+    sumValues,
+    subtractValues,
+    calculateCircleArea
+};
