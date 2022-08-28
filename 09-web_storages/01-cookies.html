@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Cookies</h1>
+
+    <p>Maximum 4k méretűek, meghatározott ideig maradnak a felhasználó gépén, vagy addig, amíg azt ki nem törli.</p>
+    <h2>Régebbi szabályok</h2>
+    <ul>
+        <li>
+            rfc2109 szabványnak kellett megfelelnie
+        </li>
+        <li>
+            összesen 300
+        </li>
+        <li>
+            domain-enként max 20 db
+        </li>
+    </ul>
+    <h2>
+        Mostani szabályok
+    </h2>
+    <p>Böngészőnként változó</p>
+    <a href="http://browsercookielimits.iain.guru/">http://browsercookielimits.iain.guru/</a>
+
+    <h2>
+        Mit tárolunk sütiben?
+    </h2>
+
+    <ul>
+        <li>
+            felhasználó tokenjét
+        </li>
+    </ul>
+
+    <script>
+        'use strict';
+
+        document.cookie = 'username=John Doe; expires=Fri, 01 Jan 2023 12:00:00 UTC; SameSite=Strict; path=/';
+        // document.cookie = 'username=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/';
+
+    </script>
+</body>
+
+</html>
