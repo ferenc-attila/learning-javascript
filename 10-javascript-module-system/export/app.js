@@ -1,7 +1,7 @@
 'use strict';
 
 import {
-    sumValues, subtractValues, calculateCircleArea
+    sum as sumValues, subtract as subtractValues, calculateCircleArea //más néven is lehet importálni
 } from './module.js';
 
 console.log(sumValues(45,8));
