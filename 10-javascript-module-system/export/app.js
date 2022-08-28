@@ -9,7 +9,7 @@
 
 import * as MyMath from './module.js'; //ekkor egy MyMath objektumként importálja a fájl tartalmát
 
-console.log(MyMath.sumValues(45,8));
-console.log(MyMath.subtractValues(45,8));
+console.log(MyMath.sum(45,8));
+console.log(MyMath.subtract(45,8));
 console.log(MyMath.calculateCircleArea(15));
 // console.log(pi); Hibára fut, de a függvényben használható
