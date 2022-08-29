@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>RegExp grouping</h1>
+
+    <script>
+        'use strict';
+        
+        const pattern = /[abc]/g;
+        const pattern2 = /^[abc]/;
+        const pattern3 = /[abc]$/;
+        const pattern4 = /^(ab|bc)/;
+        const pattern5 = /^(ab|bc)$/;
+        const text = 'abraka dabra';
+        console.log(text.match(pattern));
+        console.log(text.match(pattern2));
+        console.log(text.match(pattern3));
+        console.log(text.match(pattern4));
+        console.log('ab'.match(pattern5));
+        console.log('bc'.match(pattern5));
+        console.log('abc'.match(pattern5));
+    </script>
+</body>
+</html>
