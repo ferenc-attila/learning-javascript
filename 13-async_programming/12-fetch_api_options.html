@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Fetch API options</h1>
+
+    <script>
+        'use strict';
+
+        const fetchHeaders = new Headers({
+            'Content-Type': 'application.json'
+        });
+
+        // const fetchHeadersAsArray = new Headers([
+        //     'Content-Type', 'application.json'
+        // ]);
+
+        const fetchOptions = {
+            method: 'GET',
+            headers: fetchHeaders,
+            mode: 'cors',
+            cache: 'no-cache'
+        }
+
+        const result = fetch('./data.json', fetchOptions);
+        result
+            .then((data) =>
+                data.json()
+            )
+            .then((data) =>
+                console.log(data.users)
+            )
+
+    </script>
+</body>
+
+</html>
