@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Race()</h1>
+
+    <script>
+        'use strict';
+
+        const promises = [
+            new Promise((resolve, reject) => setTimeout(resolve, 3000, '3000 HUF')),
+            new Promise((resolve, reject) => setTimeout(resolve, 2000, '2000 HUF')),
+            new Promise((resolve, reject) => setTimeout(resolve, 1000, '1000 HUF')),
+            new Promise((resolve, reject) => setTimeout(resolve, 4000, '4000 HUF')),
+        ];
+
+        Promise.race(promises)
+            .then(console.log)
+
+        Promise.all(promises)
+            .then(console.log)
+    </script>
+</body>
+
+</html>
