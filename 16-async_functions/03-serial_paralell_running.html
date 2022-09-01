@@ -9,7 +9,7 @@
 </head>
 
 <body>
-    <h1>Serial and paralell running</h1>
+    <h1>Serial and paralell running, measure running time</h1>
 
     <script>
         'use strict';
@@ -34,8 +34,21 @@
             return (await promiseA) + (await promiseB) + (await promiseC);
         }
 
-        serial().then(console.log);
-        paralell().then(console.log);
+        async function measureExecution(someFunction) {
+            const start = performance.now();
+            const result = await someFunction();
+            const end = performance.now();
+            // return end - start;
+            console.log({
+                FunctionName: someFunction.name,
+                executionTime: end - start,
+                result
+            })
+        }
+
+        measureExecution(serial);
+        measureExecution(paralell);
+
     </script>
 </body>
 
