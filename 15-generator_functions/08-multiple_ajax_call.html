@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Multiple AJAX call with fetch API</h1>
+    <script>
+        'use strict';
+
+        const urls = ['./data1.json', './data2.json'];
+
+        function responseHandler(generatorObject) {
+            const result = generatorObject.next();
+            const {
+                done,
+                value
+            } = result;
+            if (!done) {
+                value
+                .then((data) => data.json())
+                .then((user) => console.log(user))
+                .catch((error) => console.error(error))
+                responseHandler(generatorObject);
+            }
+        }
+
+        function* main() {
+            for (const url of urls) {
+                yield fetch(url);
+            }
+        }
+
+        const myGenerator = main();
+
+        responseHandler(myGenerator);
+    </script>
+</body>
+
+</html>
