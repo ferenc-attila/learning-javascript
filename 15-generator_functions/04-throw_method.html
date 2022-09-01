@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>throw()</h1>
+    <p>Ha hibát akarunk dobni, akkor azt mindenképpen a generátorfüggvényen belül kell lekezelni.</p>
+    <script>
+        'use strict';
+
+        function* gereatorFunction() {
+            try {
+                yield 1;
+            } catch (error) {
+                console.error(error);
+            }
+            yield 2;
+            yield 3;
+        }
+
+        const generatorObject = gereatorFunction();
+        console.log(generatorObject.next());
+        console.log(generatorObject.throw(new Error('Custom error')));
+        console.log(generatorObject.next());
+        console.log(generatorObject.next());
+    </script>
+</body>
+
+</html>
