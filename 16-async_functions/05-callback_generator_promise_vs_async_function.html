@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Callback, generator and promise vs. async functions</h1>
+
+    <script src="//cdn.jsdelivr.net/npm/bluebird@3.7.1/js/browser/bluebird.js"></script>
+    <script>
+        'use strict';
+
+        //Callback hell
+
+        function addOneToCallbackHell(number, callback) {
+            let result = number + 1;
+            if (callback) {
+                setTimeout(function () {
+                    callback(result);
+                }, 10)
+            }
+        }
+
+        addOneToCallbackHell(5, function (result1) {
+            addOneToCallbackHell(result1, function (result2) {
+                addOneToCallbackHell(result2, function (result3) {
+                    addOneToCallbackHell(result3, function (result4) {
+                        addOneToCallbackHell(result4, function (result5) {
+                            console.log('Callback hell: ', result5)
+                        });
+                    });
+                });
+            });
+        });
+
+        //Promise 1.
+
+        function addOneToPromise(number) {
+            let result = number + 1;
+            return new Promise((resolve, reject) => {
+                setTimeout(() =>
+                    resolve(result), 10)
+            })
+        }
+
+        addOneToPromise(5)
+            .then(result1 =>
+                addOneToPromise(result1)
+            )
+            .then(result2 =>
+                addOneToPromise(result2)
+            )
+            .then(result3 =>
+                addOneToPromise(result3)
+            )
+            .then(result4 =>
+                addOneToPromise(result4)
+            )
+            .then(result5 => {
+                console.log('Promise: ', result5)
+            });
+
+        //Yield with bluebird lib
+
+        Promise.coroutine(function* () {
+            const result1 = yield addOneToPromise(5);
+            const result2 = yield addOneToPromise(result1);
+            const result3 = yield addOneToPromise(result2);
+            const result4 = yield addOneToPromise(result3);
+            const result5 = yield addOneToPromise(result4);
+            return result5;
+        })()
+            .then((result) => console.log('Yield with bluebird lib: ', result));
+
+        
+        //Async await
+
+        async function main() {
+            const result1 = await addOneToPromise(5);
+            const result2 = await addOneToPromise(result1);
+            const result3 = await addOneToPromise(result2);
+            const result4 = await addOneToPromise(result3);
+            const result5 = await addOneToPromise(result4);
+            console.log('Async await: ', result5);
+        }
+
+        main();
+    </script>
+</body>
+
+</html>
