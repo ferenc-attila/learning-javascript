@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Generate unique id and Fibonacci</h1>
+    <script>
+        'use strict';
+
+        console.log('---------------ID---------------')
+        function* generateId() {
+            let id = 0;
+            while (true) {
+                yield id++;
+            }
+        }
+        
+        const id = generateId();
+        console.log(id.next());
+        console.log(id.next());
+        console.log(id.next());
+        console.log(id.next());
+        console.log(id.next());
+        console.log(id.next());
+        
+        console.log('---------------Fibonacci---------------')
+        function* fibonacci() {
+            let current = 1;
+            let next = 1;
+            while (true) {
+                next = next + current;
+                current = next - current;
+                yield next;
+            }
+        }
+
+        const fibonacciNumber = fibonacci();
+
+        console.log(fibonacciNumber.next());
+        console.log(fibonacciNumber.next());
+        console.log(fibonacciNumber.next());
+        console.log(fibonacciNumber.next());
+        console.log(fibonacciNumber.next());
+        console.log(fibonacciNumber.next());
+        console.log(fibonacciNumber.next());
+        console.log(fibonacciNumber.next());
+        console.log(fibonacciNumber.next());
+        console.log(fibonacciNumber.next());
+
+    </script>
+</body>
+
+</html>
