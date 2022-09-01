@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Microtask queue</h1>
+
+    <img src="../img/microstask_queue.jpg" alt="graph">
+
+    <p>Youtube: Philip Roberts - event loop</p>
+
+    <button class="click-me">Click</button>
+
+    <script>
+        'use strict';
+
+        const button = document.querySelector('.click-me');
+
+        button.addEventListener('click', () => {
+            console.log('Listener 1');
+
+            setTimeout(() => {
+                console.log('setTimeOut 1');
+            }, 1000)
+
+            Promise
+            .resolve('Promise 1')
+            .then(console.log)
+        })
+
+        button.addEventListener('click', () => {
+            console.log('Listener 2');
+
+            setTimeout(() => {
+                console.log('setTimeOut 2');
+            }, 1000)
+
+            Promise
+            .resolve('Promise 2')
+            .then(console.log)
+        })
+
+        // console.log(button);
+    </script>
+</body>
+
+</html>
