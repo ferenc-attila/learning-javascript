@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Async callback hell</h1>
+
+    <P>Example of old legacy code.</P>
+    <script>
+        'use strict';
+
+        function one(args, callback) {
+            setTimeout(function () {
+                callback;
+                console.log(args * 1);
+            }, 1000)
+        }
+
+        function two(args, callback) {
+            setTimeout(function () {
+                callback;
+                console.log(args * 2);
+            }, 500)
+        }
+
+        function three(args, callback) {
+            setTimeout(function () {
+                callback;
+                console.log(args * 3);
+            }, 3000)
+        }
+
+        function four(args, callback) {
+            setTimeout(function () {
+                callback;
+                console.log(args * 4);
+            }, 5000)
+        }
+
+        function five(args, callback) {
+            setTimeout(function () {
+                console.log(args * 5);
+            }, 1000)
+        }
+
+        one(1, function () {
+            two(2, function () {
+                three(3, function () {
+                    four(4, function () {
+                        five(5)
+                    })
+                })
+            })
+        })
+
+    </script>
+</body>
+
+</html>
