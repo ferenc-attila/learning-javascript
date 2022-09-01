@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Generator functions 1</h1>
+
+    <script>
+        'use strict';
+
+        function* languages() {
+            console.log('start');
+            yield 'php';
+            yield 'perl';
+            yield 'ruby';
+            console.log('end');
+        }
+
+        const generatorObject = languages();
+        console.log(generatorObject.next());
+        console.log(generatorObject.next());
+        console.log(generatorObject.next());
+        console.log(generatorObject.next());
+
+    </script>
+</body>
+
+</html>
