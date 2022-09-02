@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>This inside arrow function</h1>
+
+    <p>Az arrow function nem bind-olja a this-t, tehát objecten belül is a window lesz a this értéke.
+        Ezért nem használunk arrow function-t objektumon belül.
+    </p>
+
+    <p>Ha azonban a metóduson belül van egy arrow function, az már a thist a metódustól vezsi át, ahol pedig a this az
+        objektum.
+        Így már lehet használni.
+    </p>
+    <script>
+        // 'use strict'
+
+        const user = {
+            firstName: 'John',
+            lastName: 'Doe',
+            speak() {
+                const logger = () => {
+                    console.log(this);
+                };
+                logger();
+            }
+        };
+
+        user.speak('Hi!');
+    </script>
+</body>
+
+</html>
