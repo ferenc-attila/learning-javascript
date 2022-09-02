@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>This inside object method's function</h1>
+
+    <script>
+            // 'use strict'
+
+            const user = {
+                firstName: 'John',
+                lastName: 'Doe',
+                speak(message) {
+                    function logger() {
+                        console.log(this.firstName);
+                    }
+                    logger();
+                }
+            };
+
+            var firstName = 'Jane'; // Ha nem strict módban vagyunk, a function eléri ezt a változót a Window-on belül (22. sor). Const-al, lettel nem működik.
+
+            user.speak('Hi!');
+    </script>
+</body>
+
+</html>
