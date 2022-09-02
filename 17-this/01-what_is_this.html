@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>What is "this" keyword?</h1>
+
+    <ul>
+        <li>
+            A globális kódban a global object, ami a böngészőben a window
+        </li>
+        <li>
+            Egy objektum metódusában (közvetlenül) az objektum maga
+        </li>
+        <li>
+            Függvényen belül, strict mód nélkül a gélobal object (böngészőben a window)
+        </li>
+        <li>
+            Függvényen belül, strict módban undefined
+        </li>
+        <li>
+            Egy eventnél az elem maga, amin az esemény bekövetkezett
+        </li>
+        <li>
+            bind(), call(), apply() metódusoknál bármi, magam be tudom állítani, mi legyen a this
+        </li>
+        <li>
+            konstruktor függvénynél az objektumpéldány, amit létrehozunk a segítségével
+        </li>
+        <li>
+            Az arrow function a parent scope-ból örökli a this-t (nme bind-olja a this-t)
+        </li>
+    </ul>
+</body>
+
+</html>
