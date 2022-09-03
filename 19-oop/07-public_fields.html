@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Public fields</h1>
+
+    <p>Ha nem hozok létre konstruktort, egy default, paraméter nélküli konstruktor fut le.</p>
+
+    <p>Ha van field és annak van beállítva defult value, ne szerepeljen konstruktorban a filed.</p>
+    <p>Ha konstruktor van, és kell default value, azt ott adjuk meg.</p>
+    <p>A field szerepelhet konstruktor előtt, ha nincs default value hozzá beállítva.</p>
+
+    <script>
+        'use strict';
+
+        class User {
+            name = 'John Doe';
+            role; //-> nem kötelező, de lehetséges
+            // constructor(name = 'John Doe') { // default value beállítva
+            //     this.name = name;
+            // }
+
+            constructor(role = 'admin') {
+                this.role = role;
+            }
+
+            test() {
+                return `Test user ${this.name}`;
+            }
+
+            static speak(message) {
+                return `Says: ${message}`;
+            }
+        }
+        const user = new User();
+
+        console.log(User.speak('Hi!'));
+        console.log(user.test());
+    </script>
+</body>
+</html>
