@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Property descriptors and defineProperty()</h1>
+
+    <p>
+        Alapértelmezetten true:
+    </p>
+    <ul>
+        <li>value: érték</li>
+        <li>enumerable: iterálható-e</li>
+        <li>writeable: írható-e</li>
+        <li>consigurable: törölehető-e a tulajdonság</li>
+    </ul>
+
+    <p>Defineproperty használatával alapból mindhárom property false lesz. Tehát azt kell megadni, amit true-ra szeretnénk állítani</p>
+    <p>Saját konstruktorfüggvényben és protoype-nál is meghatározhatom ezeket.</p>
+    <p>Getter és setter is megadható itt, de akkor a value és a writeable ne legyen megadva</p>
+    <script>
+        'use strict'
+
+        const user = {
+            name: 'John Doe'
+        };
+
+        console.log(Object.getOwnPropertyDescriptor(user, 'name'));
+        console.log(Object.getOwnPropertyDescriptors(user));
+
+        const anotherUser = {
+            name: 'Jane Doe'
+        };
+
+        Object.defineProperty(anotherUser, 'firstName', {
+            // value: 'Jane',
+            // writeable: false,
+            enumerable: false,
+            configurable: false,
+            get() {
+                return this.name.split(' ')[0]
+            },
+            set (firstName) {
+                const firstAndLastName = this.name.split(' ');
+                this.name = `${firstName} ${firstAndLastName[1]}`;
+            }
+
+        });
+
+        console.log(Object.getOwnPropertyDescriptor(anotherUser, 'firstName'));
+        // anotherUser.firstName = 'Jill'; -> Nem müködik, hiszen a writeable property false.
+        console.log(anotherUser);
+        console.log(Object.keys(anotherUser)); // Hiányzik a firstName, hiszen az enumerable false.
+        // delete anotherUser.firstName; -> Nem működik, hiszen a consigurable is false.
+        anotherUser.firstName = 'Jane'
+        console.log(anotherUser.firstName);
+    </script>
+</body>
+</html>
