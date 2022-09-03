@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Inheritance with extends keyword 02</h1>
+
+
+
+    <script>
+        'use strict';
+
+        class Person {
+            constructor(name) {
+                this.name = name;
+            }
+
+            sayHi() {
+                return 'Hi!';
+            }
+        }
+
+        class User extends Person {
+            constructor(name, role) {
+                super(name);
+                this.role = role;
+            }
+
+            whoAmI() {
+                return `I'm ${this.name}`;
+            }
+
+            sayHi() {
+                const result = super.sayHi();
+                return `User says ${result}`;
+            }
+        }
+
+        const person1 = new Person('Person 1');
+        const person2 = new Person('Person 2');
+        const user1 = new User('User 1', 'user');
+        const user2 = new User('User 2', 'user');
+
+        console.log(person1, person2);
+        console.log(user1, user2);
+
+        console.log(user1.sayHi());
+    </script>
+</body>
+</html>
