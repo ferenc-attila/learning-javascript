@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Private fileds</h1>
+
+    <p>Alapértelmezetten Javascriptben minden public</p>
+
+    <p>#-el kezdődő field privát lesz az újabb js szabvány szerint.</p>
+
+    <script>
+        'use strict';
+
+        class User {
+            name = 'John Doe';
+            static isAGod = true;
+            #isADeveloper = true;
+            static #isTired = true;
+
+            constructor(role = 'admin') {
+                this.role = role;
+            }
+
+            logAPrivateFieldValue() {
+                console.log(this.#isADeveloper);
+            }
+
+            static logPrivateStaticFieldValue() {
+                console.log(User.#isTired);
+            }
+
+            test() {
+                return `Test user ${this.name}`;
+            }
+
+            static speak(message) {
+                return `Says: ${message}`;
+            }
+        }
+
+        const user = new User();
+        User.logPrivateStaticFieldValue();
+
+
+    </script>
+</body>
+</html>
