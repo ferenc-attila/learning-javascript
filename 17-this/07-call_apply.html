@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>The call() and the apply() methods</h1>
+
+    <p>Ha kiragadom a kontextusából, már undefined a this strict módban. Ezért van szükség a call, vagy az apply
+        használatára,
+        amelyeknél megadhatjuk első paraméterként, min hívtuk meg.</p>
+    <p>call esetében felsorolom vesszővel elválasztva a meghívott függvény paramétereit, aplly esetén tömbbrn adom át.
+    </p>
+
+    <script>
+        'use strict'
+
+        const user = {
+            firstName: 'John',
+            lastName: 'Doe',
+            speak(message) {
+                console.log(this);
+                console.log(`${this.firstName} ${this.lastName} says: ${message}`);
+            }
+        };
+
+        const speak = user.speak;
+        // speak('Hi!');
+        speak.call(user, 'Hi!');
+
+        const jane = {
+            firstName: 'Jane',
+            lastName: 'Doe',
+        }
+
+        speak.call(jane, 'Woow');
+        speak.apply(user, ['Hello']);
+        speak.apply(jane, ['Good afternoon!']);
+
+    </script>
+</body>
+
+</html>
