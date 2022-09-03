@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Static fileds</h1>
+
+    <script>
+        'use strict';
+
+        class User {
+            name = 'John Doe';
+            static isAGod = true;
+
+            constructor(role = 'admin') {
+                this.role = role;
+            }
+
+            test() {
+                return `Test user ${this.name}`;
+            }
+
+            static speak(message) {
+                return `Says: ${message}`;
+            }
+        }
+        const user = new User();
+        console.log(user.name);
+        console.log(User.isAGod);
+    </script>
+</body>
+</html>
