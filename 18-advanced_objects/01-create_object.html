@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Create objects</h1>
+
+    <p>Konstruktor függvényt mindig nagy betűvel írjuk.</p>
+    <script>
+        'use strict'
+
+        const objectLiteral = {};
+
+        const objectConstructor = new Object();
+
+        function User(name, role) {
+            this.name = name;
+            this.role = role;
+        }
+
+        const johnDoe = new User('John Doe', 'user');
+        const janeDoe = new User('Jane Doe', 'user');
+
+        console.log(johnDoe, janeDoe);
+    </script>
+</body>
+</html>
