@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Class methods</h1>
+
+    <script>
+        'use strict';
+
+        class User {
+            constructor(name, role) {
+                this.name = name;
+                this.role = role;
+            }
+
+            whoAmI() {
+                console.log(`I'm ${this.name}`);
+            }
+        };
+
+        const johnDoe = new User('John Doe', 'user');
+        const janeDoe = new User('Jane Doe', 'admin');
+
+        console.log(johnDoe, janeDoe);
+        johnDoe.whoAmI();
+        janeDoe.whoAmI();
+    </script>
+</body>
+</html>
