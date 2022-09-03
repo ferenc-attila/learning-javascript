@@ -12,7 +12,16 @@
     <script>
         'use strict';
 
+        const arr  = [undefined, '', , 'two', 'three', 'four'];
+        const [a, b, c, d] = arr;
         
+        console.log(b);
+
+        const result = [1,2,3,4,5]
+        .filter(item => item ** 2 % 3)
+        .reduce((previous, current) => previous + current);
+
+        console.log(result);
     </script>
 </body>
 </html>
