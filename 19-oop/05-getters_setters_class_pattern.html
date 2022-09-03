@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Getters and setters with class pattern</h1>
+
+    <script>
+        'use strict';
+
+        class User {
+            constructor(name) {
+                this.name = name;
+            }
+
+            get firstName() {
+                return this.name.split(' ')[0];
+            }
+            set firstName(firstName) {
+                const firstAndLastName = this.name.split(' ');
+                this.name = `${firstName} ${firstAndLastName[1]}`;
+            }
+            get lastName() {
+                return this.name.split(' ')[1];
+            }
+            set lastName(lastName) {
+                const firstAndLastName = this.name.split(' ');
+                this.name = `${firstAndLastName[0]} ${lastName}`;
+            }
+        }
+
+        const user = new User('Jane Doe');
+        console.log(user.firstName);
+        console.log(user.lastName);
+        user.firstName = 'John';
+        user.lastName = 'Smith';
+        console.log(user.firstName);
+        console.log(user.lastName);
+        console.log(user);
+    </script>
+</body>
+</html>
