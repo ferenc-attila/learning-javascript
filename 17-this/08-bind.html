@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>The bind() method</h1>
+
+    <p>A bind() esetében új függvényt hozunk létre, ahol a this az lesz, amit mi megadunk.</p>
+
+    <script>
+        'use strict'
+
+        const user = {
+            firstName: 'John',
+            lastName: 'Doe',
+            speak(message) {
+                console.log(this);
+                console.log(`${this.firstName} ${this.lastName} says: ${message}`);
+            }
+        };
+
+        const speak = user.speak;
+        // speak('Hi!');
+        speak.call(user, 'Hi!');
+
+        const jane = {
+            firstName: 'Jane',
+            lastName: 'Doe',
+        }
+
+        speak.call(jane, 'Woow');
+        speak.apply(user, ['Hello']);
+        speak.apply(jane, ['Good afternoon!']);
+
+        const speakBind = user.speak.bind(jane);
+
+        speakBind('Yeah');
+    </script>
+</body>
+
+</html>
