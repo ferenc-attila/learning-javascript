@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Prototype details</h1>
+
+    <p>
+        [[Prototype]] tulajadonsága minden objektumnak van.
+        prototype-ja csak függvényeknek van.
+        __prot__ segítségével érjük el őket.
+    </p> 
+
+    <p>
+        <img src="../img/prototype.jpg" alt="prototype graph">
+    </p>
+    <script>
+        'use strict'
+
+        const objectLiteral = {};
+
+        const objectConstructor = new Object();
+
+        function User(name, role) {
+            this.name = name;
+            this.role = role;
+        }
+
+        User.prototype.whoAmI = function () {
+                console.log(`I'm ${this.name}`);
+            }
+
+        const johnDoe = new User('John Doe', 'user');
+        const janeDoe = new User('Jane Doe', 'user');
+
+        console.log(johnDoe, janeDoe);
+        johnDoe.whoAmI();
+        janeDoe.whoAmI();
+    </script>
+</body>
+</html>
