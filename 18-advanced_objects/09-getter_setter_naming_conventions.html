@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Naming conventions for getters and setters</h1>
+
+    <p>A property nevének el kell térnie a getter nevétől. A propertynek adható pl. az _name, de ez nem javasolt.</p>
+
+    <script>
+        'use strict'
+
+        const user = {
+            _name: 'Jane Doe',
+            get name() {
+                console.log('getter');
+                return this._name;
+            }
+        };
+
+        console.log(user.name);
+    </script>
+</body>
+
+</html>
