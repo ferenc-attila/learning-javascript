@@ -82,7 +82,7 @@ const cardClick = (event) => {
 };
 
 const checkPair = () => {
-    const firstCardIcon = document.querySelector(',card.flipped i');
+    const firstCardIcon = document.querySelector(', card.flipped i');
     if (firstCardIcon) {
         const firstCardIconClass = firstCardIcon.className.split(' ');
         const pair = document.querySelectorAll(`.card.flipped .${firstCardIconClass.pop()}`);
