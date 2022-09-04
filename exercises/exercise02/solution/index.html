@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <body>
+        <script type="module">
+          import Walker from "./js/Walker.js";
+    
+          const name = 'Jane Doe';
+          const state = 'almost dead';
+    
+          const walker = new Walker(name, state);
+          console.log('Name: ', walker.name);
+          console.log('State: ', walker.state);
+          console.log('Speak: ', walker.speak('harr harr'));
+          console.log('Walk: ', walker.walk('100'));
+          console.log('Eat: ', walker.eat('fresh meal'));
+    
+          console.log('Firstname: ', walker.firstName);
+          console.log('Lastname: ', walker.lastName);
+          walker.firstName = 'Gipsz'
+          walker.lastName = 'Jakab'
+          console.log('Firstname: ', walker.firstName);
+          console.log('Lastname: ', walker.lastName);
+          console.log(walker);
+    
+        </script>
+      </body>
+</body>
+</html>
