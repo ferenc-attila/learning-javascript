@@ -1,3 +1,5 @@
+'use strict';
+
 class Api {
     #url = 'http://localhost:3000/';
 
