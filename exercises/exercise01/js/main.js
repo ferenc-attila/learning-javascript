@@ -15,7 +15,6 @@ const connection = new User(api, messenger);
 
 connection.read(98);
 connection.read(9);
-connection.read();
-// connection.create(user);
-// connection.update(56, user);
-// connection.delete(99);
+connection.create(user);
+connection.update(56, user);
+connection.delete(100);

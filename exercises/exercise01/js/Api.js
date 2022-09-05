@@ -10,6 +10,7 @@ class Api {
     async post(data) {
         const fetchOptions = {
             method: 'POST',
+            headers: {"Content-Type" : "Application/json"},
             body: JSON.stringify(data),
         };
 
@@ -25,6 +26,7 @@ class Api {
     async put(id, data) {
         const fetchOptions = {
             method: 'PUT',
+            headers: {"content-type" : "application/json"},            
             body: JSON.stringify(data)
         };
 
@@ -36,9 +38,9 @@ class Api {
         const fetchOptions = {
             method: 'DELETE'
         };
-
-        const result = await fetch(`${this.#url}/${id}`, fetchOptions);
-        return result.json();
+            const result = await fetch(`${this.#url}/${id}`, fetchOptions);
+            console.log(result);
+            return result.json();
     };
 }
 
