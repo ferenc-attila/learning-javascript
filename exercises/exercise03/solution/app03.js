@@ -11,8 +11,8 @@ async function delay(timeout, callback) {
 
 async function request(url, method) {
     try {
-        const result = await fetch(url, { method });
-        console.log(result.json());
+        const result = await fetch(url,method);
+        return await result.json();
     } catch (error) {
         if (error && retryCounter <= maxRetry) {
             retryCounter++;
@@ -24,4 +24,4 @@ async function request(url, method) {
     }
 }
 
-export { maxRetry, retryCounter, delayInMilliseconds, users, request };
+export { users, request };
